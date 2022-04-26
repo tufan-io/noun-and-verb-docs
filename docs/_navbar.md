@@ -1,11 +1,11 @@
+- [Home](/)
 - Getting started
+  - [Quick start](getting-started/quickstart.md)
+  - [Tutorials](getting-started/tutorials.md)
 
-  - [Quick start](quickstart.md)
-  - [Quick start](quickstart.md)
-  - [Quick start](quickstart.md)
-
-- Getting started
-
-  - [Quick start](quickstart.md)
-  - [Quick start](quickstart.md)
-  - [Quick start](quickstart.md)
+- Guides
+  - [Annotations](guides/annotations.md)
+  - [Seeding](guides/seeding.md)
+  - [Custom Mocker](guides/custom-mocker.md)
+  - [Custom Verb](guides/custom-verb.md)
+  - [Integration](guides/integration.md)
