@@ -1,4 +1,5 @@
 /* https://github.dev/prisma/docs/blob/main/src/components/layout.css# */
+/* Modify from above */
 body {
     /* Generic */
     --main-font-color: #1a202c;
@@ -24,6 +25,10 @@ body {
     --code-token5-color: #690;
     --code-token6-color: #9a6e3a;
     --code-token7-color: #e90;
+    /* noun-and-verb */
+    --code-token8-color: #1549e3;
+    --code-token9-color: #225397;
+    /* */
     --code-linenum-color: #cbd5e0;
     --code-added-color: #47bb78;
     --code-added-bg-color: #d9f4e6;
@@ -36,6 +41,8 @@ body {
 }
 
 /* https://github.dev/prisma/docs/blob/f2de3a8a06d56efc99b47487e8a606bc10bf6990/src/components/customMdx/prism/index.css */
+/* Modify from above */
+
 .pre-highlight {
     position: relative;
 }
@@ -208,4 +215,12 @@ inlinecode {
 
 .token.annotation {
     color: var(--code-token3-color) !important;
+}
+
+.token.nv-annotation {
+    color: var(--code-token8-color) !important;
+}
+
+.token.nv-args {
+    color: var(--code-token9-color) !important;
 }
