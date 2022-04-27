@@ -13,6 +13,23 @@ Possible position
 - Enum
 - Enum value
 
+```prisma
+// Enum
+enum Type {
+    // Enum value
+    Buyer
+    // Enum value
+    Seller
+}
+
+// Model
+model User {
+    // Field
+    id        String   @id @default(cuid())
+    // Field
+    type      Type
+```
+
 ## @readOnly
 
 **Position: Field**

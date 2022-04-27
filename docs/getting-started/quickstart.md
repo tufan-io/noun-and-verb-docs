@@ -27,7 +27,7 @@ npx prisma migrate dev
 ## Run generator
 
 ```
-npx prisma generates
+npx prisma generate
 ```
 
 This takes some time at first, but it is much faster after the first run.
