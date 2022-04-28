@@ -46,7 +46,7 @@ model Profile {
 }
 ```
 
-## Run generator
+## Run Generator
 
 ```
 npx prisma generate
