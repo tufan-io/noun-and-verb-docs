@@ -94,14 +94,16 @@ But this will generate random string such as `vR)[L>ON>`.
 
 ## @seed
 
-?> **Position: Model / No arguments**
+?> **Position: Model / 1 optional argument**
 
-!> We recommend reading [seeding guide](guides/seeding.md) before using it
+A depth first, cycle avoiding walk is performed from each `@seed` node to seed
+the database.
 
-A depth first, cycle avoiding walk is performed from each `@seed` node.
+It assumes that root level models have **100 items** per table and relationships
+have **between 0/1-20 elements**. But this can be overidden by argument.
 
 ```prisma
-/// @seed
+/// @seed {count: 100, min: 1, max: 100}
 model User {
 ```
 
