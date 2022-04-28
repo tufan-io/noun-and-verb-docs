@@ -6,9 +6,10 @@
 `Noun & Verb` works by adding 8 annotations to
 [`Prisma schema`](https://www.prisma.io/docs/concepts/components/prisma-schema).
 
-```prisma
-// Possible position : Enum / Enum value / Model / Field
+There's 4 possible position for annotations. `Enum`, `Enum value`, `Model` and
+`Field`.
 
+```prisma
 // Enum
 enum Type {
     // Enum value
@@ -29,12 +30,11 @@ model User {
 
 ?> **Position: Field / No arguments**
 
-Extends SQL semantics, designates the field as readOnly. Which means this field
-does not appear in the Create and Update input type definitions in the GraphQL
-schema.
+This field does not appear in the `Create` and `Update` input type definitions
+in the `GraphQL schema`.
 
-This annotation is useful to mark server generated fields - id, timestamps and
-such.
+This annotation is useful to mark server generated fields such as `createdAt`
+and `updatedAt`.
 
 ```prisma
 /// @readOnly
@@ -45,11 +45,11 @@ createdAt DateTime @default(now())
 
 ?> **Position: Field / No arguments**
 
-Extends SQL semantics, designates the field as createOnly. This field only shows
-up in the Create input type
+This field only shows up in the `Create` input type definitions in the
+`GraphQL schema`.
 
-This annotation is useful to mark fields that are creational in nature. Fields
-that can only be modified by deleting and recreating the database row.
+This annotation is useful to mark fields that are creational in nature, such as
+`id`.
 
 ```prisma
 /// @createOnly
@@ -60,8 +60,10 @@ id        String   @id @default(cuid())
 
 ?> **Position: Field / No arguments**
 
-Extends SQL semantics, designates the field as writeOnly. This field only shows
-up in the Create and Update input types, but missing from the Read types.
+This field only shows up in the `Create` and `Update` input type definitions in
+the `GraphQL schema`.
+
+This annotation is useful to mark fields such as `password`.
 
 ```prisma
 /// @writeOnly
@@ -72,60 +74,52 @@ password  String
 
 ?> **Position: Field / 1 required argument**
 
-`Noun & Verb` uses [faker.js](https://fakerjs.dev/) for built-in mock data
-generation. Currently, it supports
-[155 data values](../data/supported-faker.md).
-
-The supported faker values are specified as
+See [List of supported faker properties](../data/supported-faker.md) to check
+all possible arguments. You can also create
+[custom mocker](guides/custom-mocker.md).
 
 ```prisma
 /// @mock faker.name.firstname
 firstName String
 ```
 
-You can create [custom mocker](guides/custom-mocker.md) too.
+`faker.name.firstname` will generate possible name such as `Allene`.
+
+```prisma
+// No @mock
+firstName String
+```
+
+But this will generate random string such as `vR)[L>ON>`.
 
 ## @seed
 
-?> **Position: Model / 1 optional argument**
+?> **Position: Model / No arguments**
 
 !> We recommend reading [seeding guide](guides/seeding.md) before using it
 
-Since relational databases cannot be guaranteed to be directed-acyclic-graphs,
-we use the `@seed` annotation on models, to define which models to use as roots
-of the seeding tree for mock data. A depth first, cycle avoiding walk is
-performed of from each seed node. Field level `@mock` annotations are used to
-generate the actual mock data.
-
-The `@seed` implementation means that for many-to-many relations, mock data is
-generated as one-to-many. One should provide `@seed` annotations to trigger mock
-data generation in both directions.
-
-`@seed` typically assumes that root level models have 100 items per table and
-relationships have between 0/1-20 elements. This is done to create sufficient
-data to trigger pagination examples in API usage, without overwhelming the mock
-database. This is however controllable. `@seed` is the only annotations that
-takes a JSON5 string as an argument to enable this.
+A depth first, cycle avoiding walk is performed from each `@seed` node.
 
 ```prisma
-/// @seed {count: 100, min: 1, max: 100}
+/// @seed
 model User {
 ```
 
-If count is specified, it overrides. Else a random number between min and max is
-used to generate a number of mock instances.
+TODO `@seed {count: 100, min: 1, max: 100}` is not working
 
 ## @scalar
 
 ?> **Position: Field / 1 required argument**
 
-Designates a "format" for the field, per GraphQL specifications. Defines the
-serialization/de-serialization/validation criteria for the field values.
+Designates a format for the field, per `GraphQL` specifications. Defines the
+`serialization / deserialization / validation` criteria for the field values.
 
 ```prisma
 /// @scalar Email
 email     String
 ```
+
+TODO Why this is using `faker.internet.email` when mocker is not specified?
 
 `Noun & Verb` supports [76 scalar types](../data/supported-scalars.md)
 out-of-the-box. Using any of these values for the scalar, will generate an
