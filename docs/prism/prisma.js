@@ -22,7 +22,7 @@
             pattern: /(^|[^\\:])\/\/\/.*/,
             inside: {
                 'nv-annotation': /@readOnly|@createOnly|@writeOnly|@mock|@seed|@scalar|@directive/,
-                'nv-args': /.*/
+                'nv-args': /\s.+$/
 
             },
             lookbehind: true,
