@@ -9,3 +9,4 @@
   - [Custom Mocker](guides/custom-mocker.md)
   - [Custom Verb](guides/custom-verb.md)
   - [Integration](guides/integration.md)
+  - [Plugins](guides/plugins.md)

@@ -77,7 +77,7 @@ Current default. Might support others in future.
 
 ## [Envelop](https://www.envelop.dev)
 
-For `@oneOf`. You can apply [other plugins](https://www.envelop.dev/plugins).
+For `@oneOf`. You can apply [other plugins](guides/plugins.md).
 
 ## Validator
 
