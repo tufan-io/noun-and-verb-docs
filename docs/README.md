@@ -5,6 +5,8 @@
 
 ?> **TL;DR** : Code generator that bridges `Prisma ORM` and `GraphQL API`.
 
+TODO what is Noun and Verb
+
 `Noun & Verb` is
 [`Prisma generator`](https://www.prisma.io/docs/concepts/components/prisma-schema/generators)
 which provides a workflow for developers to write less code for developing
@@ -31,6 +33,10 @@ prototyping to enterprise scale software development.
 TBD
 
 > Who should use `Noun & Verb`?
+
+Anyone.
+
+We considered enterprise-scale users from day one.
 
 TBD
 

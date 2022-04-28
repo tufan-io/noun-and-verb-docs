@@ -79,3 +79,10 @@ npm run dev
 ```
 
 Now go to `http://localhost:1234` to play with it!
+
+## Next
+
+`Noun & Verb` is not only for initialization. Actually, it is workflow. In the
+process of development, you will run `npx prisma generate` multiple times to
+generate boilerplate codes. If you are interested, see
+[custom verb](guides/custom-verb) and [custom mocker](guides/custom-mocker).

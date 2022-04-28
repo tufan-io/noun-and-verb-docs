@@ -32,7 +32,7 @@ fullName String
 ?> Boilerplate code for custom mocker function will be generated with
 `npx prisma generate`
 
-Run `npm run todo` to check find out file you need to fill in.
+Run `npm run todo` to find out which file you need to fill in.
 
 ## Implement mocker
 

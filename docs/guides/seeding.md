@@ -10,6 +10,8 @@ The `@seed` implementation means that for **many-to-many** relations, mock data
 is generated as **one-to-many**. One should provide `@seed` annotations to
 trigger mock data generation in both directions.
 
+?> **See how data flows from `@seed` in sketch below**
+
 ## Unidirectional Seed
 
 ```prisma

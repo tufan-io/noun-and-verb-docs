@@ -96,6 +96,8 @@ But this will generate random string such as `vR)[L>ON>`.
 
 ?> **Position: Model / 1 optional argument**
 
+!> If you are confused where to add `@seed`, read our [guide](guides/seeding).
+
 A depth first, cycle avoiding walk is performed from each `@seed` node to seed
 the database.
 

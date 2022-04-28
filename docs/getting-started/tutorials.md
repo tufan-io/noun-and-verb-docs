@@ -1,11 +1,19 @@
 # Tutorials
 
-?> This will walk you through building GraphQL API server from scratch using
+?> This will walk you through building `GraphQL API` from scratch using
 `Noun & Verb`!
 
 ## Shopping Cart
 
-### `Prisma Schema` + `Annotations`
+We are going to make simple `GraphQL API` for `E-commerce`.
+
+### Prepare Prisma Schema
+
+?> If you are new to `Prisma`,
+[Start from scratch](https://www.prisma.io/docs/getting-started/setup-prisma/start-from-scratch)
+or
+[Add to existing project](https://www.prisma.io/docs/getting-started/setup-prisma/add-to-existing-project)
+might be helpful.
 
 ```prisma
 datasource db {
@@ -15,10 +23,6 @@ datasource db {
 
 generator client {
   provider = "prisma-client-js"
-}
-
-generator noun_and_verb {
-  provider = "noun_and_verb"
 }
 
 model User {
@@ -51,6 +55,20 @@ model Product {
   carts     Cart[]
 }
 ```
+
+### Install `Noun & Verb`
+
+```
+npm i -D noun-and-verb
+```
+
+```prisma
+generator noun_and_verb {
+  provider = "noun_and_verb"
+}
+```
+
+### Add Annotations
 
 ```prisma
 /// @seed
@@ -70,7 +88,9 @@ model User {
   updatedAt DateTime @default(now())
   cart      Cart?
 }
+```
 
+```prisma
 model Cart {
   /// @readOnly
   id        String    @id @default(cuid())
@@ -83,7 +103,9 @@ model Cart {
   items     Product[]
   coupon    String?
 }
+```
 
+```prisma
 model Product {
   /// @readOnly
   id        String   @id @default(cuid())
@@ -97,6 +119,8 @@ model Product {
   carts     Cart[]
 }
 ```
+
+### .
 
 ```
 npm run todo
