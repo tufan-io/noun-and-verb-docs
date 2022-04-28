@@ -1,14 +1,15 @@
-If you think there's something to be improved, please leave an issue
-[here](https://github.com/tufan-io/noun-and-verb-docs).
+- If you think there's something to be improved, please leave an issue
+  [here](https://github.com/tufan-io/noun-and-verb-docs).
 
 # What is `Noun & Verb`?
 
 ?> **TL;DR** : Code generator that bridges `Prisma ORM` and `GraphQL API`.
 
-`Noun & Verb` is `Prisma generator` which provides a workflow for developers to
-write less code for developing GraphQL API without adding an extra abstraction
-layer. It can scale from quick prototyping to enterprise scale software
-development.
+`Noun & Verb` is
+[`Prisma generator`](https://www.prisma.io/docs/concepts/components/prisma-schema/generators)
+which provides a workflow for developers to write less code for developing
+GraphQL API without adding an extra abstraction layer. It can scale from quick
+prototyping to enterprise scale software development.
 
 - Uses 8 annotations on `Prisma Schema` to generate a CRUD GraphQL API server
 - Out of the Box support for:
@@ -44,6 +45,8 @@ intent.
 
 All generated code that wires things together should be visible in plain sight
 and as minimal as possible.
+
+There aren't any `Noun & And` specific code in the generated code.
 
 ## Customization
 

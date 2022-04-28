@@ -3,7 +3,7 @@
 It is possible to create custom mocker functions for data types not supported,
 by using the mocker prefix, like so:
 
-```
+```prisma
 /// @mock mocker.title
 title    String
 ```
@@ -23,7 +23,7 @@ field can use a custom mock that depends upon these previously computed values.
 The custom mocker functions are a single function that allow creation of
 dependent values.
 
-```
+```prisma
   /// @mock faker.name.firstName
   firstName String
 

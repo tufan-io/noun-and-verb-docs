@@ -1,21 +1,33 @@
 # Annotations
 
+!> To add `Noun & Verb`'s annotations to `Prisma schema`, you should use
+[`///` instead of `//`](https://www.prisma.io/docs/concepts/components/prisma-schema#comments)
+
 `Noun & Verb` works by adding 8 annotations to
 [`Prisma schema`](https://www.prisma.io/docs/concepts/components/prisma-schema).
 
-To add `Noun & Verb`'s annotations to `Prisma schema`, you should use
-[`///` instead of `//`](https://www.prisma.io/docs/concepts/components/prisma-schema#comments).
+```prisma
+// Possible position : Enum / Enum value / Model / Field
 
-Possible position
+// Enum
+enum Type {
+    // Enum value
+    Buyer
+    // Enum value
+    Seller
+}
 
-- Model
-- Field
-- Enum
-- Enum value
+// Model
+model User {
+    // Field
+    id        String   @id @default(cuid())
+    // Field
+    type      Type
+```
 
 ## @readOnly
 
-**Position: Field**
+?> **Position: Field / No arguments**
 
 Extends SQL semantics, designates the field as readOnly. Which means this field
 does not appear in the Create and Update input type definitions in the GraphQL
@@ -24,11 +36,14 @@ schema.
 This annotation is useful to mark server generated fields - id, timestamps and
 such.
 
-This annotation takes no arguments.
+```prisma
+/// @readOnly
+createdAt DateTime @default(now())
+```
 
 ## @createOnly
 
-**Position: Field**
+?> **Position: Field / No arguments**
 
 Extends SQL semantics, designates the field as createOnly. This field only shows
 up in the Create input type
@@ -36,20 +51,26 @@ up in the Create input type
 This annotation is useful to mark fields that are creational in nature. Fields
 that can only be modified by deleting and recreating the database row.
 
-This annotation takes no arguments.
+```prisma
+/// @createOnly
+id        String   @id @default(cuid())
+```
 
 ## @writeOnly
 
-**Position: Field**
+?> **Position: Field / No arguments**
 
 Extends SQL semantics, designates the field as writeOnly. This field only shows
 up in the Create and Update input types, but missing from the Read types.
 
-This annotation takes no arguments.
+```prisma
+/// @writeOnly
+password  String
+```
 
 ## @mock
 
-**Position: Field**
+?> **Position: Field / 1 required argument**
 
 `Noun & Verb` uses [faker.js](https://fakerjs.dev/) for built-in mock data
 generation. Currently, it supports
@@ -57,7 +78,7 @@ generation. Currently, it supports
 
 The supported faker values are specified as
 
-```
+```prisma
 /// @mock faker.name.firstname
 firstName String
 ```
@@ -66,7 +87,9 @@ You can create [custom mocker](guides/custom-mocker.md) too.
 
 ## @seed
 
-**Position: Model**
+?> **Position: Model / 1 optional argument**
+
+!> We recommend reading [seeding guide](guides/seeding.md) before using it
 
 Since relational databases cannot be guaranteed to be directed-acyclic-graphs,
 we use the `@seed` annotation on models, to define which models to use as roots
@@ -82,39 +105,43 @@ data generation in both directions.
 relationships have between 0/1-20 elements. This is done to create sufficient
 data to trigger pagination examples in API usage, without overwhelming the mock
 database. This is however controllable. `@seed` is the only annotations that
-takes a JSON (JSON5 actually) string as an argument to enable this.
+takes a JSON5 string as an argument to enable this.
 
-`@seed {count: 100, min: 1, max: 100}`
+```prisma
+/// @seed {count: 100, min: 1, max: 100}
+model User {
+```
 
 If count is specified, it overrides. Else a random number between min and max is
 used to generate a number of mock instances.
 
-[**Where should I put @seed? Can I have multiple @seed?**](guides/seeding.md)
-
 ## @scalar
 
-**Position: Field**
+?> **Position: Field / 1 required argument**
 
 Designates a "format" for the field, per GraphQL specifications. Defines the
 serialization/de-serialization/validation criteria for the field values.
 
-This annotation takes one argument, the name of the scalar.
+```prisma
+/// @scalar Email
+email     String
+```
 
 `Noun & Verb` supports [76 scalar types](../data/supported-scalars.md)
 out-of-the-box. Using any of these values for the scalar, will generate an
 appropriate scalar file properly wired up to use
 [validator.js](https://www.npmjs.com/package/validator) for validating value.
 
-## @directive (Experimental)
+## @directive
 
-**Position: Field, Enum**
+?> **Position: Field, Enum / User define arguments**
 
-!> Use at your own risk
+!> This is still experimental. Use at your own risk
 
 TBD
 
-## @default (Working in process)
+## @default
 
-**Position: Field**
+?> **Position: Field / No arguments**
 
-!> Do not use.
+!> Working in process. Do not use.

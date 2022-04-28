@@ -1,33 +1,27 @@
 # Quick start
 
-## Write `Prisma schema`
+?> This will give you idea of how using `Noun & Verb` feels like. For detailed
+example, go to [`tutorial`](getting-started/tutorials.md).
+
+## Write Schema
 
 ```
 npx prisma init
 ```
 
-## Add annotations to `Prisma schema`
+- [Prisma schema](https://www.prisma.io/docs/concepts/components/prisma-schema)
+- [Data sources](https://www.prisma.io/docs/concepts/components/prisma-schema/data-sources)
+- [Supported databases](https://www.prisma.io/docs/reference/database-reference/supported-databases)
+- [Choosing db push or Prisma Migrate](https://www.prisma.io/docs/concepts/components/prisma-migrate/db-push#choosing-db-push-or-prisma-migrate)
+
+## Add annotations to Schema
 
 See [annotations guide](../guides/annotations.md).
-
-## Prepare Database
-
-[Supported databases](https://www.prisma.io/docs/reference/database-reference/supported-databases)
-
-```
-npx prisma db push
-```
-
-```
-npx prisma migrate dev
-```
-
-[Choosing db push or Prisma Migrate](https://www.prisma.io/docs/concepts/components/prisma-migrate/db-push#choosing-db-push-or-prisma-migrate)
 
 ## Run generator
 
 ```
-npx prisma generates
+npx prisma generate
 ```
 
 This takes some time at first, but it is much faster after the first run.
@@ -38,9 +32,14 @@ This takes some time at first, but it is much faster after the first run.
 npx prisma db seed
 ```
 
-## (Optional) Run `Prisma Studio`
+```
+npx prisma studio
+```
 
-## Run
+- [Integrated seeding with Prisma Migrate](https://www.prisma.io/docs/guides/database/seed-database#integrated-seeding-with-prisma-migrate)
+- [Prisma Studio](https://www.prisma.io/studio)
+
+## Run Server
 
 ```
 npm run dev
