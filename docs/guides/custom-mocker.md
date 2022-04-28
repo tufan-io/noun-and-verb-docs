@@ -1,43 +1,43 @@
 # Custom Mocker
 
-It is possible to create custom mocker functions for data types not supported,
-by using the mocker prefix, like so:
+?>This is useful when you **can't find one you need** in the
+[List of supported faker properties](data/supported-faker).
+
+## Independent / Dependent Mocker
+
+?> All built-in mockers are **independent**, and custom mockers are
+**dependent**
+
+**Independent mockers can not use data of other fields, but dependent mocker
+can.** For example, this is useful if you have `firstName`, `lastName` and
+`fullName` field. `fullName` should be computed from `firstName` and `lastName`
+field.
+
+## Add mocker to Schema
+
+?> Built-in mockers use **'faker' perfix**, and custom mockers use **'mock'
+prefix**
 
 ```prisma
-/// @mock mocker.title
-title    String
+/// @mock faker.name.firstName
+firstName String
+/// @mock faker.name.lastName
+lastName String
+/// @mock mocker.fullName
+fullName String
 ```
 
-When using a custom `mocker`, a typescript file is generated in
-`src/__tests__/fixtures/seeder/mocker/${modelName}/title.ts`.
+## Run Generator
 
-An additional nuance is that `faker` mocks are considered Independent mocks, in
-that they do not rely on the field values of other fields to determine their
-mock value.
+?> Boilerplate code for custom mocker function will be generated with
+`npx prisma generate`
 
-All `mocker.*` mocks are treated as Dependent mocks, in that they _can_ depend
-on mock values of other independent fields. This permits the example below,
-where the firstName and lastName use regular `faker` functions, but a fullName
-field can use a custom mock that depends upon these previously computed values.
+Run `npm run todo` to check find out file you need to fill in.
 
-The custom mocker functions are a single function that allow creation of
-dependent values.
-
-```prisma
-  /// @mock faker.name.firstName
-  firstName String
-
-  /// @mock faker.name.lastName
-  lastName String
-
-  /// @mock mocker.fullName
-  fullName String
-```
-
-would generate a mocker function as shown below:
+## Implement mocker
 
 ```ts
-// src/__tests__/fixtures/seeder/mocker/${modelName}/fullName.ts
+// src/__tests__/fixtures/seeder/mocker/${modelName}/${fullName}.ts
 
 import * as Faker from "faker";
 import { Independent } from "./${model}Generator";
