@@ -2,7 +2,10 @@
 
 ## Create GraphQL Spec
 
-Add `.sdl` file in `src` directory. For example, `src/verbs/createUserWithCart`.
+?> You might want to look into `src/nouns/*.sdl` to find input type you want
+
+Add `.sdl` file in `src` directory. For example,
+`src/verbs/createUserWithCart.sdl`.
 
 ```graphql
 extend type Mutation {
@@ -14,11 +17,18 @@ extend type Mutation {
 
 ## Run Generator
 
-Then run `npx prisma generate`.
+?> Boilerplate code for resolver function will be generated with
+`npx prisma generate`
+
+Run `npm run todo` to find out which file you need to fill in.
 
 ## Implement resolver
 
-`npm run todo`
+?> All `GraphQL` spec and resolver function files will be picked up from
+`src/schema.ts`
+
+!> You should manually import return type if needed. In this case, `User` from
+`@prisma/client`
 
 ```typescript
 import { Context, Resolvers } from "./utils";
@@ -47,7 +57,3 @@ export const resolvers: Resolvers = {
   Mutation,
 };
 ```
-
-import `User`.
-
-See `src/schema.ts`.
