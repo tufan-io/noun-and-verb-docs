@@ -90,7 +90,8 @@ firstName String
 firstName String
 ```
 
-But this will generate random string such as `vR)[L>ON>`.
+But this will use `faker.datatype.string` to generate random string such as
+`vR)[L>ON>`.
 
 ## @seed
 
@@ -118,17 +119,20 @@ TODO `@seed {count: 100, min: 1, max: 100}` is not working
 Designates a format for the field, per `GraphQL` specifications. Defines the
 `serialization / deserialization / validation` criteria for the field values.
 
+`Noun & Verb` supports [76 scalar types](../data/supported-scalars.md)
+out-of-the-box. Using any of these values for the scalar, will generate an
+appropriate scalar file properly wired up to use
+[validator.js](https://www.npmjs.com/package/validator) for validating value.
+
 ```prisma
 /// @scalar Email
 email     String
 ```
 
-TODO Why this is using `faker.internet.email` when mocker is not specified?
-
-`Noun & Verb` supports [76 scalar types](../data/supported-scalars.md)
-out-of-the-box. Using any of these values for the scalar, will generate an
-appropriate scalar file properly wired up to use
-[validator.js](https://www.npmjs.com/package/validator) for validating value.
+Note that in example above, `faker.internet.email` will be used instead of
+`faker.datetype.string` when creating mock data. This is because we have
+**[default scalar-faker-mappings](guides/scalar-faker-mappings.md)**, which can
+be overridden by `@mock`.
 
 ## @directive
 
