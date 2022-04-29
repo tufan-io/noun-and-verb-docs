@@ -21,24 +21,34 @@ We considered enterprise-scale users from day one.
 
 # Features
 
-?> Uses [8 annotations](guides/annotations.md) on `Prisma Schema`.
+?> All theses features are enabled by **adding**
+[8 annotations](guides/annotations.md) on `Prisma Schema`.
 
-## GraphQL API
+`Noun & Verb` does not own the code. It generates code for you.
 
-- Fully functionomg CRUD GraphQL API
-- Custom GraphQL queries and mutations
+**These are 3 things we currently generate.**
 
-## Wide range of Scalars with extensibility
+## Generate GraphQL API
 
-- A wide range of `scalars` via
-  [`validator.js`](https://github.com/validatorjs/validator.js)
-- Custom scalars (beyond those provided by
-  [`validator.js`](https://github.com/validatorjs/validator.js))
+- Out of box
+  - **Fully functioning** CRUD `GraphQL API`
+  - Wide range of `GraphQL Scalars` via
+    [`validator.js`](https://github.com/validatorjs/validator.js)
+- Extensible
+  - **Generate boilerplate code** for custom `GraphQL` operations
+  - Support for custom scalars
 
-## Seeding (TODO fancy words)
+## Generate Test Cases
 
-- Field level mock data via [`faker.js`](https://github.com/Marak/Faker.js)
-- Custom mock functions
+- **Fully functioning**, 100% test coverage
+- All CRUD `GraphQL` operations are tested against **actual database**
+
+## Generare Seeders
+
+- Entire database can be seeded **without writing seed scripts manually**
+- Out of box support for [`faker.js`](https://github.com/Marak/Faker.js) for
+  field level mock data
+- Support for custom mock functions
 
 ?> You might want to check out our [Philosophy](/philosophy.md),
 [Roadmap](/roadmap.md) and [Technical Explanation](/technical-explanation.md).
