@@ -1,13 +1,13 @@
 # Guides
 
-## [Annotations](guides/annotations)
+- [Annotations](guides/annotations)
 
-## [Seeding](guides/seeding)
+- [Seeding](guides/seeding)
 
-## [Custom Mocker](guides/custom-mocker)
+- [Custom Mocker](guides/custom-mocker)
 
-## [Custom Verb](guides/custom-verb)
+- [Custom Verb](guides/custom-verb)
 
-## [Integration](guides/integration)
+- [Integration](guides/integration)
 
-## [Plugins](guides/plugins)
+- [Plugins](guides/plugins)
