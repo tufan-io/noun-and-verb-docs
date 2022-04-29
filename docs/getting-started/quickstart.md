@@ -1,7 +1,7 @@
 # Quick start
 
 ?> This will give you idea of how using `Noun & Verb` feels like. For detailed
-example, go to [`tutorial`](getting-started/tutorials.md).
+example, check out [`tutorial`](getting-started/tutorials.md).
 
 ## Installation
 
@@ -82,7 +82,7 @@ Now go to `http://localhost:1234` to play with it!
 
 ## Next
 
-`Noun & Verb` is not only for initialization. Actually, it is workflow. In the
-process of development, you will run `npx prisma generate` multiple times to
-generate boilerplate codes. If you are interested, see
-[custom verb](guides/custom-verb) and [custom mocker](guides/custom-mocker).
+`Noun & Verb` is not only for initialization. In the process of development, you
+will run `npx prisma generate` multiple times to generate boilerplate codes. If
+you are interested, see [custom verb](guides/custom-verb) and
+[custom mocker](guides/custom-mocker).

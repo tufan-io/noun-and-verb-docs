@@ -106,11 +106,9 @@ It assumes that root level models have **100 items** per table and relationships
 have **between 0/1-20 elements**. But this can be overidden by argument.
 
 ```prisma
-/// @seed {count: 100, min: 1, max: 100}
+/// @seed {count: 100, min: 1, max: 20}
 model User {
 ```
-
-TODO `@seed {count: 100, min: 1, max: 100}` is not working
 
 ## @scalar
 
@@ -138,9 +136,7 @@ be overridden by `@mock`.
 
 ?> **Position: Field, Enum / User define arguments**
 
-!> This is still experimental. Use at your own risk
-
-TBD
+!> Working in process. Do not use.
 
 ## @default
 
