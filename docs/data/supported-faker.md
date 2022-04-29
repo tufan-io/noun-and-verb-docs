@@ -1,6 +1,6 @@
-# List of supported faker properties
+# List of supported `faker` properties
 
-Please see [faker.js](https://fakerjs.dev/api/address) for more details
+Please see [faker.js](https://fakerjs.dev/api/address) for more details.
 
 1. [faker.address.cardinalDirection](https://fakerjs.dev/api/address.html#cardinal-direction)
 2. [faker.address.city](https://fakerjs.dev/api/address.html#city)

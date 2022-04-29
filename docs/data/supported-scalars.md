@@ -1,4 +1,4 @@
-# List of vailable scalars
+# List of vailable `scalars`
 
 > NOTE:
 >
