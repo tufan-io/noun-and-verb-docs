@@ -52,3 +52,21 @@ export default async function (
   return `${fields.firstname} ${fields.lastName}`;
 }
 ```
+
+## Note about using free API for custom mocker
+
+There's many API to get data with free plan. One of them is
+[`Unsplash`](https://unsplash.com/).
+
+`faker.unsplash` is not from `faker.js` but built in `Noun & Verb`.
+
+```prisma
+/// @mock faker.unsplash lights
+image     String
+```
+
+But since`Unsplash`'s free plan has low rate limits, we create caching wrapper
+to make it work. This may be the case with other APIs.
+
+You can see the implementation in
+`src/__tests__/fixtures/seeder/mocker/_builtIns.ts`
