@@ -14,9 +14,12 @@ between them(`Verbs`).
 ?> All theses features are enabled by **adding**
 [8 annotations](guides/annotations.md) on `Prisma Schema`.
 
-- `Noun & Verb` does not own the code. It generates code for you.
-- There aren't any `Noun & Verb` specific code in the output.
-- **There are 3 things we currently generate.**
+- It does **not own** the code.
+- It generates code **without sacrificing any of the flexibility** enabled by
+  the underlying tools.
+- There aren't any `Noun & Verb` **specific** code in the output.
+
+**There are 3 things we currently generate:**
 
 ## Generate GraphQL API
 
