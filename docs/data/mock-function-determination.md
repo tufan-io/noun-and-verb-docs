@@ -1,6 +1,21 @@
-# Scalar Faker Mappings
+# Mock function determination
 
-## Direct Mapping
+Mock function is determined by the following **priorities:**
+
+1. `@mock`
+2. _if_ `enum`
+   - _if_ `@default` _exist_
+     - Use default value
+   - _else_
+     - Use custom mock function
+
+3. `Scalar Faker Mappings`
+
+## Scalar Faker Mappings
+
+### Direct Mapping
+
+This includes `Prisma Scalar` (`String`, `Int`, `Float`, `Boolean`, `DateTime`).
 
 | Scalar          | Faker                          |
 | --------------- | ------------------------------ |
@@ -39,7 +54,7 @@
 | URL             | faker.internet.url             |
 | UUID            | faker.datatype.uuid            |
 
-## Indirect Mapping
+### Indirect Mapping
 
 These scalars are mapped to pre-built mock generators in `Noun & Verb` using
 `faker.js`.
@@ -59,10 +74,10 @@ These scalars are mapped to pre-built mock generators in `Noun & Verb` using
 - RgbColor
 - Uppercase
 
-## No Mapping
+### No Mapping
 
-These scalars does not have a pre-built mock generator, so we'll create a stub
-that the user can fill in.
+These scalars does not have a pre-built mock generator, so we'll create a custom
+mock function stub that the user can fill in.
 
 - Base32
 - Base58

@@ -74,8 +74,8 @@ password  String
 
 ?> **Position: Field / 1 required argument**
 
-See [List of supported faker properties](../data/supported-faker.md) to check
-all possible arguments. You can also create
+See [List of supported faker properties](data/supported-faker.md) to check all
+possible arguments. You can also create
 [custom mocker](guides/custom-mocker.md).
 
 ```prisma
@@ -92,6 +92,9 @@ firstName String
 
 But this will use `faker.datatype.string` to generate random string such as
 `vR)[L>ON>`.
+
+Check out [mock function determination](data/mock-function-determination) for
+details.
 
 ## @seed
 
@@ -117,7 +120,7 @@ model User {
 Designates a format for the field, per `GraphQL` specifications. Defines the
 `serialization / deserialization / validation` criteria for the field values.
 
-`Noun & Verb` supports [76 scalar types](../data/supported-scalars.md)
+`Noun & Verb` supports [76 scalar types](data/supported-scalars.md)
 out-of-the-box. Using any of these values for the scalar, will generate an
 appropriate scalar file properly wired up to use
 [validator.js](https://www.npmjs.com/package/validator) for validating value.
@@ -129,8 +132,8 @@ email     String
 
 Note that in example above, `faker.internet.email` will be used instead of
 `faker.datetype.string` when creating mock data. This is because we have
-**[default scalar-faker-mappings](guides/scalar-faker-mappings.md)**, which can
-be overridden by `@mock`.
+**[default scalar-faker-mappings](data/mock-function-determination?id=scalar-faker-mappings)**,
+which can be overridden by `@mock`.
 
 ## @directive
 
