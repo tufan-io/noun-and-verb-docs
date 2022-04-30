@@ -139,8 +139,18 @@ model Product {
 }
 ```
 
-### .
+### Seeding
 
-```
-npm run todo
-```
+Note that database seeding is also happeneds with `npx prisma migrate dev` and
+`npx prisma migrate reset`. You can learn about it in
+[Integrated seeding with Prisma Migrate](https://www.prisma.io/docs/guides/database/seed-database#integrated-seeding-with-prisma-migrate).
+
+?> [`Prisma Studio`](https://www.prisma.io/studio) is great way to check if the
+database is properly seeded.
+
+## Next
+
+`Noun & Verb` is not only for initialization. In the process of development, you
+will run `npx prisma generate` multiple times to generate boilerplate codes. If
+you are interested, see [custom verb](guides/custom-verb) and
+[custom mocker](guides/custom-mocker).
