@@ -5,7 +5,15 @@
 
 ## Shopping Cart
 
-We are going to make simple `GraphQL API` for `E-commerce`.
+We are going to make simple `GraphQL API` for `E-commerce`. I use `Supabase`
+here to get free `PostgreSQL` database.
+
+### Prepare database
+
+Make new project, copy connection string from
+`Setting - Database - Connection string - Nodejs`, and past it to
+`schema.prisma` or `.env`. Make sure you replace `[YOUR-PASSWORD]` of connection
+string.
 
 ### Prepare Prisma Schema
 
@@ -17,12 +25,17 @@ might be helpful.
 
 ```prisma
 datasource db {
-  provider = "sqlite"
-  url      = "file:./db.sqlite"
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
 
 generator client {
   provider = "prisma-client-js"
+}
+
+enum Level {
+  Normal
+  Vip
 }
 
 model User {
@@ -32,6 +45,7 @@ model User {
   password  String
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
+  level     Level    @default(Normal)
   cart      Cart?
 }
 
@@ -55,6 +69,10 @@ model Product {
   carts     Cart[]
 }
 ```
+
+Let check we are coonnected to database properly by running
+`npx prisma db push`. If everything goes well, you'll see tables are created in
+`Supabase - table editor`. You can run `npx prisma studio` instead.
 
 ### Install `Noun & Verb`
 
@@ -86,6 +104,7 @@ model User {
   createdAt DateTime @default(now())
   /// @readOnly
   updatedAt DateTime @default(now())
+  level     Level    @default(Normal)
   cart      Cart?
 }
 ```
