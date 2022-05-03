@@ -5,9 +5,10 @@
 
 `Noun & Verb` is
 [`Prisma generator`](https://www.prisma.io/docs/concepts/components/prisma-schema/generators)
-which generates most of the boilerplate code to build `GrahpQL API Server`. It
-helps developers to think in high level, objects(`Nouns`) and interactions
-between them(`Verbs`).
+which **generates most of the boilerplate code** to build `GrahpQL API Server`.
+
+It helps developers to **think at a higher level**, objects(`Nouns`) and
+interactions between them(`Verbs`).
 
 # Features
 
