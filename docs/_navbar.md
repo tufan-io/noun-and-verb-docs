@@ -3,4 +3,10 @@
   - [Quick start](getting-started/quickstart.md)
   - [Tutorials](getting-started/tutorials.md)
 
-- [Guides](guides/README.md)
+- Guides
+  - [Annotations](guides/annotations)
+  - [Seeding](guides/seeding)
+  - [Custom Mocker](guides/custom-mocker)
+  - [Custom Verb](guides/custom-verb)
+  - [Integration](guides/integration)
+  - [Plugins](guides/plugins)
