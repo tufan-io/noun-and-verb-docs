@@ -1,23 +1,19 @@
 # Integration
 
-Technically, `Noun & Verb` is capable of integrating all that Prisma can. But
-since we are in **alpha stage**, we cannot guarantee that user experience will
-be consistent over all integrations. We recommend you to read the corresponding
-section before you start building.
+?> `Noun & Verb` has all the integrations that `Prisma` offers, but it also has
+all the limitations.
 
-- [Database features matrix](https://www.prisma.io/docs/reference/database-reference/database-features)
-- [Supported databases](https://www.prisma.io/docs/reference/database-reference/supported-databases)
+- For `Prisma`'s database support, you should read
+  [Supported databases](https://www.prisma.io/docs/reference/database-reference/supported-databases)
+  and
+  [Database features matrix](https://www.prisma.io/docs/reference/database-reference/database-features).
 
-## Database
+- If you are using [DBaaS](https://www.ibm.com/cloud/learn/dbaas), you should
+  check if they have **integration guide** with `Prisma`.
 
-### Postgress
+Since we are in very **early stage**, there is a possibility that a problem may
+occur in some database or service. If we notice that, it will be documented
+here. **If you are experiencing something that is not documented here,
+[please open an issue](https://github.com/tufan-io/noun-and-verb-docs).**
 
-### MySQL
-
-### MongoDB
-
-## Service
-
-### Prisma Data Platform
-
-### Supabase
+## Known Issues

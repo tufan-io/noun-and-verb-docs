@@ -1,4 +1,4 @@
-- If you think there's something to be improved, please leave an issue
+- If you think there's something to be improved, please open an issue
   [here](https://github.com/tufan-io/noun-and-verb-docs).
 
 # `Noun & Verb`
