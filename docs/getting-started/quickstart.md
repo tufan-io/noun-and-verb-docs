@@ -56,10 +56,20 @@ alongside with API server and test cases.
 
 You can run them by `npx prisma db seed`.
 
+## Run Tests
+
+```
+npm run test
+```
+
+Check if all tests pass successfully with **100% coverage.**
+
+You can also run `npm run dev`, go to `http://localhost:1234`, and play with it!
+
 ## Run Server
 
 ```
-npm run dev
+npm run build && npm run start
 ```
 
-Now go to `http://localhost:1234` to play with it!
+Now you have `GraphQL API` ready at `http://localhost:3456/graphql`!
