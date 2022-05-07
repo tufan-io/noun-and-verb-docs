@@ -91,7 +91,6 @@ generator noun_and_verb {
 ```prisma
 /// @seed
 model User {
-  /// @createOnly
   /// @readOnly
   id        String   @id @default(cuid())
   /// @mock faker.name.firstName
