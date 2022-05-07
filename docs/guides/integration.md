@@ -19,3 +19,17 @@ here. **If you are experiencing something that is not documented here,
 [please open an issue](https://github.com/tufan-io/noun-and-verb-docs).**
 
 ## Known Issues
+
+### PostgreSQL
+
+List of scalar variables is possible in `PostgreSQL`
+
+```prisma
+/// @mock faker.name.firstname
+names      String[]
+```
+
+But above will always generate list with 1 element.
+
+If you want multiple elements in the list, you need to write
+[custom mocker](guides/custom-mocker.md) for now.
