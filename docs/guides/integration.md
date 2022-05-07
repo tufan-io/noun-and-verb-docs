@@ -22,6 +22,8 @@ here. **If you are experiencing something that is not documented here,
 
 ### PostgreSQL
 
+#### Seeding
+
 List of scalar variables is possible in `PostgreSQL`
 
 ```prisma

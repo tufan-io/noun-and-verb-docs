@@ -35,7 +35,7 @@ const getEnveloped = envelop({
 ## Using Other Plugins
 
 ?> You can add [plugins](https://www.envelop.dev/plugins) easily by modifying
-`getEnveloped` above
+`getEnveloped` in `src/server.ts`
 
 For example, if you want to add
 [@envelop/sentry](https://www.envelop.dev/plugins/use-sentry), your
@@ -44,13 +44,10 @@ For example, if you want to add
 ```typescript
 const getEnveloped = envelop({
   plugins: [
+    ...,
     useSentry({
       ...
     }),
-    useExtendedValidation({
-      rules: [OneOfInputObjectsRule],
-    }),
-    useSchema(schema),
   ],
 });
 ```

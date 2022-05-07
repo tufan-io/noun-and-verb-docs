@@ -1,7 +1,7 @@
 - [Home](/)
 - Getting started
   - [Quick start](getting-started/quickstart.md)
-  - [Tutorials](getting-started/tutorials.md)
+  - [Tutorial](getting-started/tutorial.md)
 
 - Guides
   - [Annotations](guides/annotations)

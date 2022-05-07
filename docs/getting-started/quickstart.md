@@ -1,7 +1,7 @@
 # Quick start
 
 ?> This will give you idea of how using `Noun & Verb` feels like. For detailed
-example, check out [`tutorial`](getting-started/tutorials.md).
+example, check out [`tutorial`](getting-started/tutorial.md).
 
 ## Installation
 
@@ -21,7 +21,7 @@ generator noun_and_verb {
 
 ## Add Annotations
 
-To see bigger example, see [tutorials](getting-started/tutorials.md). To learn
+To see bigger example, see [tutorial](getting-started/tutorial.md). To learn
 about **8 annotations**, see [Annotations Guide](guides/annotations.md).
 
 ```prisma
