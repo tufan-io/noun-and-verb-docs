@@ -11,6 +11,8 @@ all the limitations.
 - If you are using [DBaaS](https://www.ibm.com/cloud/learn/dbaas), you should
   check if they have **integration guide** with `Prisma`.
 
+- [Troubleshooting](guides/troubleshooting.md) might be helpful.
+
 Since we are in very **early stage**, there is a possibility that a problem may
 occur in some database or service. If we notice that, it will be documented
 here. **If you are experiencing something that is not documented here,

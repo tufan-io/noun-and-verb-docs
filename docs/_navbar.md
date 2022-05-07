@@ -10,3 +10,4 @@
   - [Custom Verb](guides/custom-verb)
   - [Integration](guides/integration)
   - [Plugins](guides/plugins)
+  - [Troubleshooting](guides/troubleshooting)
