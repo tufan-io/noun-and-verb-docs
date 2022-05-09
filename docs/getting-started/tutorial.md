@@ -2,13 +2,12 @@
 
 ?> Let's build `instagram-like` photo management app!
 
-We will use `Noun & Verb` to build `GraphQL API Server`, and `Svelte / URQL` to
-build `Frontend`.
+We will use `Noun & Verb` to build `GraphQL API Server`.
 
-`Svelte / URQL` is a very small part of the whole and does not require prior
-experience.
+This includes most of the features you need to use `Noun & Verb` to build your
+application.
 
-## Set Up
+## Setup
 
 ?> If you are new to `Prisma`,
 [Start from scratch](https://www.prisma.io/docs/getting-started/setup-prisma/start-from-scratch)
@@ -143,6 +142,8 @@ model Collection {
   updatedAt DateTime @updatedAt
   /// @mock faker.word.noun
   name      String
+  /// @mock faker.lorem.paragraph
+  description String?
   User      User?    @relation(fields: [userId], references: [id])
   userId    String?
   posts     Post[]
@@ -271,9 +272,39 @@ npx prisma studio
 and `npx prisma migrate reset`. You can learn about it in
 [Integrated seeding with Prisma Migrate](https://www.prisma.io/docs/guides/database/seed-database#integrated-seeding-with-prisma-migrate)
 
+## Test & Play
+
+### Integration Test
+
+`npm run test`
+
+### GraphQL Playground
+
+`npm run dev`
+
+`findManyPost` `findUniqueCollection`
+
+## Implement Custom Verb
+
+`findManyPostWithCollection`
+
+Return: Collection + (Post pagination)
+
 ## Auth0 Integration
+
+`useAuth0` plugin
 
 ### Setup
 
 - [How to use `@envelop/auth0`?](https://www.envelop.dev/docs/guides/adding-authentication-with-auth0)
 - [How to add `envelop plugin` to project generated with `Noun & Verb`?](guides/plugins?id=using-other-plugins)
+
+### Authenticated Request
+
+TBD
+
+### Extend Context
+
+`useExtendContext` plugin
+
+TBD
