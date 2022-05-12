@@ -37,16 +37,17 @@ const getEnveloped = envelop({
 ?> You can add [plugins](https://www.envelop.dev/plugins) easily by modifying
 `getEnveloped` in `src/server.ts`
 
-For example, if you want to add
-[@envelop/sentry](https://www.envelop.dev/plugins/use-sentry), your
-`genEnveloped` should be modified like below.
+For example, it you want to add authentication in your API,
+[you can use `@envelop/auth0` plugin](https://www.envelop.dev/docs/guides/adding-authentication-with-auth0).
 
 ```typescript
 const getEnveloped = envelop({
   plugins: [
     ...,
-    useSentry({
-      ...
+    useAuth0({
+      domain: 'TODO',
+      audience: 'TODO',
+      extendContextField: 'auth0',
     }),
   ],
 });

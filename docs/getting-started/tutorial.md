@@ -1,11 +1,7 @@
 # Tutorial
 
-?> Let's build `instagram-like` photo management app!
-
-We will use `Noun & Verb` to build `GraphQL API Server`.
-
-This includes most of the features you need to use `Noun & Verb` to build your
-application.
+We will use `Noun & Verb` to build `GraphQL API Server` for `instagram-like`
+photo management app!.
 
 ## Setup
 
@@ -282,29 +278,4 @@ and `npx prisma migrate reset`. You can learn about it in
 
 `npm run dev`
 
-`findManyPost` `findUniqueCollection`
-
 ## Implement Custom Verb
-
-`findManyPostWithCollection`
-
-Return: Collection + (Post pagination)
-
-## Auth0 Integration
-
-`useAuth0` plugin
-
-### Setup
-
-- [How to use `@envelop/auth0`?](https://www.envelop.dev/docs/guides/adding-authentication-with-auth0)
-- [How to add `envelop plugin` to project generated with `Noun & Verb`?](guides/plugins?id=using-other-plugins)
-
-### Authenticated Request
-
-TBD
-
-### Extend Context
-
-`useExtendContext` plugin
-
-TBD
