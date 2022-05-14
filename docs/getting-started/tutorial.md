@@ -295,7 +295,7 @@ npx prisma generate
 ![custom-verb-1](../image/personal-instagram/custom-verb-1.png)
 
 ```typescript
-export async function GetRandomPost(
+export async function GetRandomPosts(
   parent: any,
   args: any,
   context: Context,
