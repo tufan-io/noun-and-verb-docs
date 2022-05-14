@@ -279,8 +279,12 @@ Since there's no hidden, or `Noun & Verb` specific code in the generated output,
 The most common thing you might want to do is adding new operation(Custom verb). So we generated most of the boilerplate code for you. Let's see how it works by adding `getRandomPost` query!
 
 ```graphql
+input Data {
+    count: Int!
+}
+
 extend type Query {
-  GetRandomPost: Post,
+  GetRandomPosts(data: Data!): [Post!]!,
 }
 ```
 
@@ -298,11 +302,14 @@ export async function GetRandomPost(
   info: any
 ): Promise<Post | null> {
   const { prisma } = context;
+  const { data: { count } } = args;
 
   const total =  await prisma.post.count();
+  const skip = Math.floor(Math.random() * (total - count));
 
-  const ret = await prisma.post.findFirst({
-    skip: Math.floor(Math.random() * total)
+  const ret = await prisma.post.findMany({
+    take: count,
+    skip
   })
 
   return ret;
