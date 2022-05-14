@@ -284,6 +284,10 @@ extend type Query {
 }
 ```
 
+```
+npx prisma generate
+```
+
 ![custom-verb-1](../image/personal-instagram/custom-verb-1.png)
 
 ```typescript
@@ -305,4 +309,4 @@ export async function GetRandomPost(
 }
 ```
 
-![custom-verb-2](../i~mage/personal-instagram/custom-verb-2.png)
+![custom-verb-2](../image/personal-instagram/custom-verb-2.png)
