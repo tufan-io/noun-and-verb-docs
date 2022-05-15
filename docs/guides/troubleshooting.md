@@ -17,6 +17,8 @@ Try running `npx prisma db push` or `npx prisma migrate dev`before running
 It's because there're too many connections being opened to the database.
 
 Try changing `concurrency` value in `src/__tests__/fixtures/seeder/index.ts`.
+Note that the change you made in `index.ts` will be overwritten when generator
+is runned again.
 
 See also
 [Connection Pool](https://www.prisma.io/docs/concepts/components/prisma-client/working-with-prismaclient/connection-pool#connection-pool-timeout).
