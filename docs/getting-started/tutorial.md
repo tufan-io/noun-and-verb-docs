@@ -270,13 +270,20 @@ and `npx prisma migrate reset`. You can learn about it in
 
 ## Test & Play
 
-You can run `npm run dev` to open `GraphQL Playground`. You can also run `NODE_ENV=dev npm run test` to run integration test which gives 100% coverage.
+You can run `npm run dev` to open `GraphQL Playground`. You can also run
+`NODE_ENV=dev npm run test` to run integration test which gives 100% coverage.
 
 ## Implement Custom Verb
 
-Since there's no hidden, or `Noun & Verb` specific code in the generated output, you can do whatever you want to do.
+Since there aren't any hidden magic or `Noun & Verb` specific code in the
+generated output, you can modify it as whatever you want to do.
 
-The most common thing you might want to do is adding new operation(Custom verb). So we generated most of the boilerplate code for you. Let's see how it works by adding `getRandomPost` query!
+The most common thing you might want to do is adding new
+operation(`Custom verb`). So we generated most of the boilerplate code for you.
+Let's see how it works by adding `getRandomPost` query!
+
+First, create `*.sdl` file any where you want. In this example, we created
+`src/verbs/GetRandomPosts.sdl` like below.
 
 ```graphql
 input Data {
@@ -288,32 +295,37 @@ extend type Query {
 }
 ```
 
-```
-npx prisma generate
-```
+Then, run `npx prisma generate`. It will generate `GetRandomPosts.ts (resolver)`
+and `GetRandomPosts.test.ts (test)`.
 
-![custom-verb-1](../image/personal-instagram/custom-verb-1.png)
+![custom-verb-1](../image/personal-instagram/custom-verb-1.png ':size=700')
+
+In this case, you should manually import `Post` type from `@prisma/client`.
+
+Let implement resolver and see if it works.
 
 ```typescript
 export async function GetRandomPosts(
   parent: any,
   args: any,
   context: Context,
-  info: any
+  info: any,
 ): Promise<Post | null> {
   const { prisma } = context;
   const { data: { count } } = args;
 
-  const total =  await prisma.post.count();
+  const total = await prisma.post.count();
   const skip = Math.floor(Math.random() * (total - count));
 
   const ret = await prisma.post.findMany({
     take: count,
-    skip
-  })
+    skip,
+  });
 
   return ret;
 }
 ```
 
 ![custom-verb-2](../image/personal-instagram/custom-verb-2.png)
+
+It works!
