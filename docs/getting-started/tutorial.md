@@ -12,15 +12,7 @@ or
 might be helpful.
 
 - Initialize project with `npm init -y && npx prisma init`.
-- Add datasource (`Postgres`)
 - Add generator (`Noun & Verb`)
-
-We use `Supabase` here to get free `PostgreSQL` database.
-
-Make new project, copy connection string from
-`Setting - Database - Connection string - Nodejs`, and past it to
-`schema.prisma` or `.env`. Make sure you replace `[YOUR-PASSWORD]` of connection
-string.
 
 ## Design Schema
 
@@ -102,7 +94,7 @@ model Post {
   updatedAt   DateTime     @updatedAt
   title       String
   description String?
-  images      String[]
+  image       String
   collections Collection[]
 }
 ```
@@ -159,7 +151,7 @@ model Post {
   /// @mock faker.lorem.paragraph
   description String?
   /// @mock faker.unsplash travel
-  images      String[]
+  image       String
   collections Collection[]
 }
 ```
@@ -180,9 +172,6 @@ Few things to point out :
    it is stil possible that duplicated name causes problem.
 
    So we will write `custom mocker` to prevent this.
-
-3. `Post - images` field might not
-   [properly seeded as expected.](guides/integration?id=seeding)
 
 ## Run Generator
 
@@ -251,14 +240,8 @@ UNSPLASH_ACCESS_KEY=[SECRET] npx prisma db seed
 `UNSPLASH_ACCESS_KEY` is needed because we added `faker.unsplash` before. If you
 don't provide it, error message will give you enough information to get one.
 
-Since we are using `Supabase`, we can easily check if database is properly
-seeded in `Table Editor`.
-
-![supabase table editor](../image/personal-instagram/table-editor.png)
-
-But you can also do the same with
-[`Prisma Studio`](https://www.prisma.io/studio) even if you are not using
-`Supabase`.
+We can easily check if database is properly seeded with
+[`Prisma Studio`](https://www.prisma.io/studio).
 
 ```
 npx prisma studio
