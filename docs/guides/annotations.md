@@ -135,6 +135,46 @@ Note that in example above, `faker.internet.email` will be used instead of
 **[default scalar-faker-mappings](data/mock-function-determination?id=scalar-faker-mappings)**,
 which can be overridden by `@mock`.
 
+---
+
+If you can't find one you need in
+[list of supported scalars](data/supported-scalars.md), you can create your own
+`Custom Scalar`.
+
+All you need to do is add annotation like below, and run `npx prisma generate`.
+
+```diff
+model User {
++ /// @scalar Custom
+  name        String       @unique
+}
+```
+
+Then, `Noun & Verb` will generate `Definition`, `Implementation Boilerplate`,
+and `Mocker Boilerplate` for you.
+
+<!-- tabs:start -->
+
+#### **Scalar Definition**
+
+![scalar-def](../image/scalar/scalar-def.png)
+![use-scalar-type-1](../image/scalar/use-scalar-type-1.png)
+![use-scalar-type-2](../image/scalar/use-scalar-type-2.png)
+![use-scalar-type-3](../image/scalar/use-scalar-type-3.png)
+
+#### **Scalar Implementation**
+
+![scalar-implementation-boilerplate](../image/scalar/scalar-implementation-boilerplate.png)
+![scalar-test-boilerplate](../image/scalar/scalar-test-boilerplate.png)
+
+#### **Scalar Mock Function**
+
+![scalar-mocker-implementation-boilerplate](../image/scalar/scalar-implementation-boilerplate.png)
+![scalar-mocker-use-1](../image/scalar/scalar-mocker-use-1.png)
+![scalar-mocker-use-2](../image/scalar/scalar-mocker-use-2.png)
+
+<!-- tabs:end -->
+
 ## @directive
 
 ?> **Position: Field, Enum / User define arguments**
